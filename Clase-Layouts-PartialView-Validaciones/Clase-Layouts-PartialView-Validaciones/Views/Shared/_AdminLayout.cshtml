@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "_LayoutHead";
+}
+
+<div>
+    <h1>Tomo pastillas como un rockstar</h1>
+    Admin Section
+</div>
+<div>
+    @await RenderSectionAsync("TopContent", required: false)
+</div>
+<div style="margin-top:50px">
+    @RenderBody()
+</div>
+
+<div style>
+    @await RenderSectionAsync("Footer", required: false)
+    Copyright pw3 - 2022
+</div>

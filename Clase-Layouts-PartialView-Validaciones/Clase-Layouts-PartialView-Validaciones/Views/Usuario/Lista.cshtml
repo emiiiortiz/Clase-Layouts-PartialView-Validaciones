@@ -1,0 +1,38 @@
+﻿@model List<Clase_Layouts_PartialView_Validaciones.Models.Usuario>
+@{
+    Layout = "_AdminLayout";
+    int maxPuntos = @Model.Max(x => x.Puntos);
+    var usuarioMaxPuntos = @Model.First(x => x.Puntos == maxPuntos);
+
+}
+@section TopContent{
+<h2>Admin Usuarios</h2>
+}
+<div>
+    Usuario con mas puntos:
+    <partial name="_pvLinkUsuario" model="usuarioMaxPuntos" />
+</div>
+
+<div>
+    <table>
+        <tr>
+            <th>Usuario</th>
+            <th>Email</th>
+        </tr>
+        @foreach (var usuario in Model)
+        {
+            <tr>
+                <td>
+                    <partial name="_pvLinkUsuario" model="@Model" />
+                </td>
+                <td>@usuario.Email</td>
+                <td>@usuario.Puntos</td>
+            </tr>
+        }
+    </table>
+
+</div>
+
+@section Footer{
+<span>Hecho el dia en clase el dia 27/04/2022</span>
+}
