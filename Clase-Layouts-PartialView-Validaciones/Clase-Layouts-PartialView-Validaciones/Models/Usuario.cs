@@ -6,7 +6,7 @@ namespace Clase_Layouts_PartialView_Validaciones.Models
     {
         [Required(ErrorMessage ="El nombre es requerido")]
         public string Nombre { get; set; }
-        [Url(ErrorMessage = "El AvatarURL debe ser al menos de 7 caracteres")]
+        [Url(ErrorMessage = "El AvatarURL debe ser una URL Valida")]
         [Required(ErrorMessage = "El AvatarURL es requerido")]
 
         public string AvatarURL { get; set; }
